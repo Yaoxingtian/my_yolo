@@ -434,8 +434,8 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
 print("root path:",ROOT)
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default='/home/camsense/yao/yolov5/weights/yolov5n.pt', help='initial weights path')
-    parser.add_argument('--cfg', type=str, default='/home/camsense/yao/yolov5/models/yolov5n.yaml', help='yolov5n.yaml path')
+    parser.add_argument('--weights', type=str, default='/home/camsense/yao/my_yolo/yolov5/weights/yolov5n.pt', help='initial weights path')
+    parser.add_argument('--cfg', type=str, default='/home/camsense/yao/my_yolo/yolov5/models/yolov5n.yaml', help='yolov5n.yaml path')
     parser.add_argument('--data', type=str, default=ROOT / 'data/sz.yaml', help='dataset.yaml path')
     parser.add_argument('--hyp', type=str, default=ROOT / 'data/hyps/hyp.scratch-low.yaml', help='hyperparameters path')
     parser.add_argument('--epochs', type=int, default=300, help='total training epochs')
@@ -466,7 +466,7 @@ def parse_opt(known=False):
     parser.add_argument('--patience', type=int, default=100, help='EarlyStopping patience (epochs without improvement)')
     parser.add_argument('--freeze', nargs='+', type=int, default=[0], help='Freeze layers: backbone=10, first3=0 1 2')
     parser.add_argument('--save-period', type=int, default=-1, help='Save checkpoint every x epochs (disabled if < 1)')
-    parser.add_argument('--seed', type=int, default=0, help='Global training seed')
+    parser.add_argument('--seed', type=int, default=7, help='Global training seed')
     parser.add_argument('--local_rank', type=int, default=-1, help='Automatic DDP Multi-GPU argument, do not modify')
 
     # Logger arguments
